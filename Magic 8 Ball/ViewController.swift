@@ -9,10 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var ballAnswer1: UIImageView!
     
-    let ballArray = [#imageLiteral(resourceName: "ball1.png"),#imageLiteral(resourceName: "ball2.png"),#imageLiteral(resourceName: "ball3.png"),#imageLiteral(resourceName: "ball4.png"),#imageLiteral(resourceName: "ball5.png")]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
 
-
-
+    @IBAction func askButton(_ sender: UIButton) {
+        
+        let ballArray = [UIImage(imageLiteralResourceName: "ball1"),
+                         UIImage(imageLiteralResourceName: "ball2"),
+                         UIImage(imageLiteralResourceName: "ball3"),
+                         UIImage(imageLiteralResourceName: "ball4"),
+                         UIImage(imageLiteralResourceName: "ball5")]
+        
+        ballAnswer1.image = ballArray.randomElement()
+        
+    }
+    
 }
 
